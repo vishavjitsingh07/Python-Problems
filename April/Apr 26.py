@@ -1,0 +1,10 @@
+class Solution:
+    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        ans = []
+        def dfs(root):
+            if not root: return
+            ans.append(root.val)
+            dfs(root.left)
+            dfs(root.right)
+        dfs(root)
+        return ans
